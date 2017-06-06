@@ -126,7 +126,7 @@ func randInt() uint32 {
 func New() ID {
 	var id ID
 	// Timestamp, 4 bytes, big endian
-	binary.BigEndian.PutUint32(id[:], uint32(time.Now().UTC().Unix()))
+	binary.BigEndian.PutUint32(id[:], uint32(time.Now().Unix()))
 	// Machine, first 3 bytes of md5(hostname)
 	id[4] = machineID[0]
 	id[5] = machineID[1]
